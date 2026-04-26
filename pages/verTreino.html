@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="../icon/logo.ico">
+  <title>Treino | Projeto Treino</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Reutiliza o MESMO CSS da tela inicial -->
+  <link rel="stylesheet" href="../css/telaInicial.css">
+</head>
+
+<body>
+
+  <!-- HEADER FIXO (SEM LOGO) -->
+  <header class="header header-workout">
+
+    <button class="back-btn" id="backBtn" type="button" aria-label="Voltar">
+      ←
+    </button>
+
+    <div class="left-area">
+      <div class="user-photo">
+        <img id="userPhoto" src="" alt="Foto do usuário">
+      </div>
+
+      <div class="user-info">
+        <span class="welcome">Treino de</span>
+        <span class="username" id="username">Nome do Usuário</span>
+      </div>
+    </div>
+
+    <button class="start-btn" id="startBtn" type="button">
+      Começar
+    </button>
+
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="content">
+
+    <section class="today-workout">
+      <h2 id="workoutTitle">Treino</h2>
+
+      <!-- INFO DO TREINO (dinâmico) -->
+      <div class="workout-card workout-meta">
+        <div class="meta-row">
+          <span class="meta-label">Dia</span>
+          <span class="meta-value" id="workoutDate">--/--</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="meta-label">Categoria</span>
+          <span class="meta-value" id="workoutCategory">--</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="meta-label">Status</span>
+          <span class="meta-value" id="workoutStatus">Não iniciado</span>
+        </div>
+      </div>
+
+      <!-- LISTA DE EXERCÍCIOS (DINÂMICA: NÃO CADASTRAR NO HTML) -->
+      <div id="exerciseList" class="exercise-list">
+        <!-- JS vai inserir os cards aqui -->
+      </div>
+
+      <!-- AÇÕES -->
+      <div class="workout-actions">
+        <button class="primary-btn" id="finishBtn" type="button">
+          Terminar treino
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="../java/verTreino.js"></script>
+</body>
+</html>

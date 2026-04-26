@@ -1,0 +1,584 @@
+/* =======================================================
+   RESET & GLOBAL
+======================================================= */
+/*#region global*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff3c00, #ff0080, #7928ca);
+  background-size: 300% 300%;
+  animation: bgMove 8s infinite alternate;
+  color: white;
+  min-height: 100vh;
+}
+
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+/*#endregion*/
+
+/*#region telaIcial*/
+
+
+/* =======================================================
+   HEADER FIXO ESTILO APP
+======================================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.left-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.user-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* =======================================================
+   MENU LATERAL
+======================================================= */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  transition: 0.3s ease;
+  padding-top: 100px;
+  z-index: 999;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0 25px;
+}
+
+.side-menu li {
+  margin-bottom: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+/* =======================================================
+   CONTEÚDO CENTRAL ESTILO APP
+======================================================= */
+
+.content {
+  padding: 100px 20px 40px;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* =======================================================
+   CARDS ESTILO APP
+======================================================= */
+
+.workout-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  padding: 25px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.workout-card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* =======================================================
+   BOTÕES MELHORADOS
+======================================================= */
+
+.workout-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.primary-btn {
+  flex: 1;
+  background: linear-gradient(90deg, #ff3c00, #ff0080);
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.secondary-btn {
+  flex: 1;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* =======================================================
+   STATUS SEMANA ESTILO APP
+======================================================= */
+
+.week-status {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.day {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.day.active {
+  background: linear-gradient(90deg, #ff3c00, #ff0080);
+}
+
+/* =======================================================
+   FREQUÊNCIA BOX
+======================================================= */
+
+.frequency-box {
+  height: 160px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+}
+
+/* =======================================================
+   BOTÃO FLUTUANTE (FAB)
+======================================================= */
+
+.fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #ff3c00, #ff0080);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.fab:hover {
+  transform: scale(1.1);
+}
+
+/* ===== MODAL LOGOUT ===== */
+
+.logout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 2000;
+}
+
+.logout-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.logout-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  color: white;
+}
+
+.logout-box h3 {
+  margin-bottom: 20px;
+}
+
+.logout-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+/*#endregion*/
+
+
+/*#region verTreino*/
+
+
+
+/* =======================================================
+   #region TELA VER TREINO (usa o mesmo tema)
+======================================================= */
+
+.header-workout{
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.back-btn{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.start-btn{
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff3c00, #ff0080);
+}
+
+.workout-meta{
+  text-align: left;
+  display: grid;
+  gap: 10px;
+}
+
+.meta-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta-label{
+  opacity: 0.75;
+  font-size: 12px;
+}
+
+.meta-value{
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.exercise-list{
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.exercise-card{
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+}
+
+.exercise-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.exercise-name{
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+.exercise-tag{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  opacity: 0.95;
+}
+
+.exercise-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.field{
+  background: rgba(0,0,0,0.15);
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.field-label{
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+.field-value{
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.weight-input{
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+}
+
+.done-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.done-label{
+  font-size: 13px;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.done-check{
+  width: 22px;
+  height: 22px;
+  accent-color: #ff3c00;
+}
+
+.workout-actions{
+  margin-top: 16px;
+}
+
+/* =======================================================
+   #endregion TELA VER TREINO
+======================================================= */
+/*#endregion*/
+
+/*#region progresso*/
+/* =======================================================
+   #region PROGRESSO / CALENDÁRIO (UI PRO)
+======================================================= */
+
+.chart-box{
+  height: 160px;
+  border-radius: 22px;
+  background: rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text{
+  opacity: 0.65;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* ===== CALENDÁRIO ===== */
+
+.calendar-card{
+  text-align: left;
+}
+
+.calendar-top{
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.calendar-title{
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.calendar-weekdays{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+.calendar-weekdays span{
+  text-align: center;
+}
+
+.calendar-grid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day{
+  height: 46px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  position: relative;
+  cursor: pointer;
+}
+
+.calendar-day.muted{
+  opacity: 0.35;
+  cursor: default;
+}
+
+.calendar-day.today{
+  outline: 2px solid rgba(255,255,255,0.55);
+}
+
+.calendar-day .badge{
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+/* Estados */
+.calendar-day.done .badge{ background: #2eea86; }    /* verde */
+.calendar-day.missed .badge{ background: #ff3b3b; }  /* vermelho */
+.calendar-day.rest .badge{ background: #b8b8b8; }    /* cinza */
+.calendar-day.planned .badge{ background: #38bdf8; } /* azul */
+
+.calendar-legend{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-top: 14px;
+  opacity: 0.95;
+}
+
+.legend-item{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.dot.done{ background: #2eea86; }
+.dot.missed{ background: #ff3b3b; }
+.dot.rest{ background: #b8b8b8; }
+.dot.planned{ background: #38bdf8; }
+
+/* =======================================================
+   #endregion PROGRESSO / CALENDÁRIO (UI PRO)
+======================================================= */
+/*#endregion*/
+
+/*#region montarTreino*/
+
+
+/*#endregion*/
+

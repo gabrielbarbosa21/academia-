@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="imagex/png" href="../icon/logo.ico">
+  <title>inicial</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/telaInicial.css">
+</head>
+
+<body>
+
+  <!-- HEADER FIXO -->
+  <header class="header">
+
+    <div class="left-area">
+      <div class="user-photo">
+        <!-- Foto vinda do banco -->
+        <img src="" alt="Foto do usuário">
+      </div>
+
+      <div class="user-info">
+        <span class="welcome">Bem-vindo 👋</span>
+        <span class="username" id="username">Nome do Usuário</span>
+      </div>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+  </header>
+
+  <!-- MENU LATERAL -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li id="menuInicio">🏠 Início</li>
+      <li id="menuCalendario">📅 Calendário</li>
+      <li id="menuProgresso">📈 Progresso</li>
+      <li id="menuConfig">⚙ Montar treino</li>
+      <li id="menuSair">🚪 Sair</li>
+    </ul>
+  </nav>
+
+
+  <!-- CONTEÚDO -->
+  <main class="content">
+
+    <!-- TREINO DO DIA -->
+    <section class="today-workout">
+      <h2>🔥 Treino de Hoje</h2>
+
+      <div class="workout-card">
+        <h3 id="workoutName">PEITO E TRÍCEPS</h3>
+
+        <div class="workout-buttons">
+          <button class="primary-btn" id="verTreinoBtn">Ver treino</button>
+          <button class="secondary-btn">Trocar treino</button>
+        </div>
+
+        <!-- Status semanal estilo app -->
+        <div class="week-status">
+          <div class="day active">S</div>
+          <div class="day active">T</div>
+          <div class="day">Q</div>
+          <div class="day">Q</div>
+          <div class="day">S</div>
+          <div class="day">S</div>
+          <div class="day">D</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FREQUÊNCIA -->
+    <section class="week-frequency">
+      <h2>📊 Frequência da Semana</h2>
+
+      <div class="frequency-box">
+        <p style="opacity:0.6; text-align:center; padding-top:60px;">
+          Gráfico de frequência aparecerá aqui
+        </p>
+      </div>
+    </section>
+
+  </main>
+  
+<!-- MODAL LOGOUT -->
+<div class="logout-modal" id="logoutModal">
+  <div class="logout-box">
+    <h3>Tem certeza que deseja sair?</h3>
+    <div class="logout-buttons">
+      <button class="secondary-btn" id="cancelLogout">Cancelar</button>
+      <button class="primary-btn" id="confirmLogout">Sair</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- BOTÃO FLUTUANTE -->
+  <div class="fab">+</div>
+
+  <script src="../java/telaInicial.js"></script>
+</body>
+
+</html>

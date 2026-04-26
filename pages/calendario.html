@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="../icon/logo.ico">
+  <title>Calendário | Projeto Treino</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/telaInicial.css">
+</head>
+<body>
+
+  <header class="header header-workout">
+    <button class="back-btn" id="backBtn" type="button">←</button>
+
+    <div class="left-area">
+      <div class="user-photo">
+        <img id="userPhoto" src="" alt="Foto do usuário">
+      </div>
+      <div class="user-info">
+        <span class="welcome">Calendário de</span>
+        <span class="username" id="username">Nome do Usuário</span>
+      </div>
+    </div>
+
+    <div style="width:42px;"></div>
+  </header>
+
+  <main class="content">
+
+    <section>
+      <h2>📅 Calendário</h2>
+
+      <div class="workout-card calendar-card">
+
+        <div class="calendar-top">
+          <button class="secondary-btn" id="prevMonthBtn" type="button">‹</button>
+          <div class="calendar-title" id="calendarTitle">Mês</div>
+          <button class="secondary-btn" id="nextMonthBtn" type="button">›</button>
+        </div>
+
+        <div class="calendar-weekdays">
+          <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid">
+          <!-- Dias gerados via JS -->
+        </div>
+
+        <div class="calendar-legend">
+          <div class="legend-item"><span class="dot done"></span> Feito</div>
+          <div class="legend-item"><span class="dot missed"></span> Faltou</div>
+          <div class="legend-item"><span class="dot rest"></span> Descanso</div>
+          <div class="legend-item"><span class="dot planned"></span> Treino (planejado)</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../java/calendario.js"></script>
+</body>
+</html>

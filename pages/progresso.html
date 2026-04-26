@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="../icon/logo.ico">
+  <title>Progresso | Projeto Treino</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/telaInicial.css">
+</head>
+<body>
+
+  <header class="header header-workout">
+    <button class="back-btn" id="backBtn" type="button">←</button>
+
+    <div class="left-area">
+      <div class="user-photo">
+        <img id="userPhoto" src="" alt="Foto do usuário">
+      </div>
+      <div class="user-info">
+        <span class="welcome">Progresso de</span>
+        <span class="username" id="username">Nome do Usuário</span>
+      </div>
+    </div>
+
+    <div style="width:42px;"></div>
+  </header>
+
+  <main class="content">
+
+    <section>
+      <h2>📊 Frequência do mês</h2>
+
+      <div class="workout-card">
+        <!-- Placeholder pro gráfico -->
+        <div class="chart-box" id="freqChartBox">
+          <p class="placeholder-text">Gráfico de frequência (placeholder)</p>
+        </div>
+
+        <div class="meta-row" style="margin-top:12px;">
+          <span class="meta-label">Treinos no mês</span>
+          <span class="meta-value" id="monthWorkouts">--</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Sequência atual</span>
+          <span class="meta-value" id="streak">--</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>⚖️ Peso corporal</h2>
+
+      <div class="workout-card">
+        <div class="chart-box" id="weightChartBox">
+          <p class="placeholder-text">Gráfico de peso (placeholder)</p>
+        </div>
+
+        <div class="exercise-grid" style="margin-top:14px;">
+          <div class="field">
+            <div class="field-label">Último peso</div>
+            <div class="field-value" id="lastWeight">-- kg</div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Novo peso</div>
+            <input class="weight-input" id="newWeightInput" type="number" inputmode="decimal" placeholder="Ex: 78.5">
+          </div>
+        </div>
+
+        <div class="workout-actions" style="margin-top:14px;">
+          <button class="primary-btn" id="saveWeightBtn" type="button">Salvar peso</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../java/progresso.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="imagex/png" href="../icon/logo.ico">
+  <title>Cadastro | MaravilhaGym</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- MESMO CSS da tela de login -->
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="login-card">
+
+      <div class="logo">
+        <img src="../img/logo.jpg" alt="Logo">
+      </div>
+
+      <h2>Cadastro</h2>
+
+      <!-- Para enviar FOTO pro backend -->
+      <form id="cadastroForm" enctype="multipart/form-data">
+        <div class="input-group">
+          <label>Nome</label>
+          <input type="text" name="nome_usuario" placeholder="Seu nome" required>
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="input-group">
+          <label>Senha</label>
+          <input type="password" name="senha" placeholder="••••••••" required>
+        </div>
+
+        <div class="input-group">
+          <label>Meta de peso (opcional)</label>
+          <input type="number" step="0.01" name="meta_peso" placeholder="Ex: 78.5">
+        </div>
+
+        <div class="input-group">
+          <label>Foto de Perfil</label>
+
+          <!-- Preview redondinho -->
+          <div class="foto-preview" id="fotoPreview">
+            <span class="foto-preview-text">Prévia</span>
+            <img id="previewImg" alt="Prévia da foto" />
+          </div>
+
+          <input type="file" id="fotoInput" name="foto" accept="image/*">
+          <small class="hint">PNG/JPG/WebP • até 2MB</small>
+        </div>
+
+        <!-- ✅ Mensagem única -->
+        <p class="msg" id="msgCadastro"></p>
+
+        <button class="login-btn" type="button" id="btnCadastrar">Cadastrar</button>
+      </form>
+      <div class="footer-text">
+        Projeto Treino • Foco & Disciplina
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JS separado -->
+  <script src="../java/cadastro.js"></script>
+</body>
+
+</html>
