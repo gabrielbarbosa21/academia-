@@ -195,6 +195,9 @@ app.post("/auth/logout", (req, res) => {
 
 // ===== HEALTH =====
 app.get("/health", (_, res) => res.json({ ok: true }));
+app.get("/", (req, res) => {
+  res.send("API rodando 🚀");
+});
 
 // ===== ERROS UPLOAD =====
 app.use((err, req, res, next) => {
